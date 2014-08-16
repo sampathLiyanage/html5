@@ -12,22 +12,22 @@ function ImageManager() {
 		var maxHeight = canvas.height;
 		var width, height;
 		if(maxWidth >= img.width && maxHeight < img.height) {
-			width = (img.width*maxHeight)/img.height;
+			width = Math.round((img.width*maxHeight)/img.height);
 			height = maxHeight;
 		} else if(maxWidth < img.width && maxHeight >= img.height) {
 			width = maxWidth;
-			height = (img.height*maxWidth)/img.width;
+			height = Math.round((img.height*maxWidth)/img.width);
 		} else  {
-			width = (img.width*maxHeight)/img.height;
+			width = Math.round((img.width*maxHeight)/img.height);
 			height = maxHeight;
 			if (width > maxWidth){
-				height = (img.height*maxWidth)/img.width;
+				height = Math.round((img.height*maxWidth)/img.width);
 				width = maxWidth;
 			}
 		} 
 		
-		var top = (maxHeight - height)/2 ;
-		var left = (maxWidth - width)/2 ;
+		var top = Math.round((maxHeight - height)/2) ;
+		var left = Math.round((maxWidth - width)/2) ;
 		return {'width':width, 'height':height, 'top':top, 'left':left, 'maxWidth':maxWidth, 'maxHeight':maxHeight};
 	}
 	

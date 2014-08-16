@@ -8,11 +8,6 @@ Animations.pre.drawImage255to0 = function(slideManager, img, context, properties
 	// Iterating imageData and obtaining pixel.
 	for (var i=0;i<temp.data.length;i+=4)
 	{
-	  var red = temp.data[i];
-	  var green = temp.data[i+1];
-	  var blue = temp.data[i+2];
-	  var alpha = temp.data[i+3]; 
-	  var v = 0.2126*red + 0.7152*green + 0.0722*blue;
 	  temp.data[i] = 255;
 	  temp.data[i+1] = 255;
 	  temp.data[i+2] = 255;
